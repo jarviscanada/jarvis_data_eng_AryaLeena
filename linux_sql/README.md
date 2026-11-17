@@ -227,6 +227,31 @@ The `host_usage.sh` script collects Linux system resource usage statistics and s
 
 **5. queries.sql**
 
+The queries.sql file contains SQL queries to analyze Linux server resource usage, monitor CPU performance, and detect duplicate records.
+
+**1. Display Latest Host Usage Records**
+
+**Purpose:** Retrieve the latest five records from the `host_usage` table.
+
+**Business Problem:** The IT team needs to monitor recently collected server resource usage data to verify that the monitoring system is working correctly.
+
+**2. Identify Servers with High CPU Usage**
+
+**Purpose:**
+Identify servers where CPU utilization exceeds 80%.(For testing purpose given it as 20%)
+
+**Business Problem:** High CPU usage may affect server performance. This query helps administrators identify servers with CPU utilization above the defined threshold and investigate potential performance issues.
+
+**3. Detect Duplicate Host Usage Records**
+
+**Purpose:** Identify duplicate records based on host_id and timestamp.
+
+**Business Problem:** Duplicate monitoring records can affect the accuracy of resource usage reports. This query uses GROUP BY, COUNT(), and HAVING to identify duplicate entries and help maintain data accuracy.
+
+**Execution:**
+
+`psql -h localhost -p 5432 -U postgres -d host_agent -W -f sql/queries.sql`
+
 ## Database Modeling
 **host_info.sh**
 | Column Name | Datatype | Constraint | Description      |
