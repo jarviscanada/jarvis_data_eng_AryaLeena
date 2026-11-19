@@ -139,6 +139,7 @@ The project was developed through the following steps:
 ## Architecture
 
 ![Linux Cluster Monitoring Architecture](assets/architecture.drawio.png)
+
 The Linux Cluster Monitoring Agent is designed to monitor three Linux hosts connected through a network switch.
 
 **Linux Host 1**: Runs Bash monitoring scripts and hosts the PostgreSQL database in Docker.
